@@ -27,6 +27,7 @@ $ npm install -g hexo-cli
 
 ```bash
 $ hexo init <folder>
+$ npm install
 ```
 
 生成目录:
@@ -85,3 +86,13 @@ deploy:
 $ hexo clean && hexo d
 ```
 
+{% note success %}
+
+npm有依赖问题，使用yarn 安装:
+
+```bash
+$ npm install -g yarn
+$ yarn #默认install
+```
+
+{% endnote %}
