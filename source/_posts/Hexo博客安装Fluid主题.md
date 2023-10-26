@@ -1,8 +1,8 @@
 ---
 title: Hexo博客安装Fluid主题
-date: 2023-09-18 02:08:35
 tags: hexo
-
+abbrlink: c3d63cfc
+date: 2023-09-18 02:08:35
 ---
 
 # Hexo博客记录

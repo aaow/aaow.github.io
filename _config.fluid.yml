@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: /img/fluid.png
+favicon: /img/ico.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/fluid.png
+apple_touch_icon: /img/ico.png
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -232,10 +232,14 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
-  - /js/DynamicLine.js
+  - /js/DynamicRibbon.js #动态线条
+  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/boom.js # 鼠标点击爆炸效果
+  - //cdn.bootcss.com/animejs/2.2.0/anime.min.js #依赖
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
+  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css # 头部打字机颜色效果渐变
+  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css# 滚动条颜色
 
 # 网页访问统计
 # Analysis of website visitors
@@ -322,7 +326,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "Fluid"
+  blog_title: "白天的星星"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -341,13 +345,16 @@ navbar:
   # 导航栏菜单，可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
+    # home: / || fa fa-home
+    # tags: /tags/ || fa fa-tags
+    # categories: /categories/ || fa fa-th
+    # archives: /archives/ || fa fa-archive
     - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "remark", link: "/remark/" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    # - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -421,11 +428,12 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <div>
-      <span id="timeDate">载入天数...</span>
-      <span id="times">载入时分秒...</span>
-      <script src="/js/duration.js"></script>
-    </div>
+    <div class="text-center py-1">   
+      <div>
+        <span>Copyright © 2020</span></a>
+        <a href="https://hexo.fluid-dev.com/docs/" target="_blank" rel="nofollow noopener">
+        <span> Hexo Fluid </span></a>    <br>
+      </div>
   '
 
   # 展示网站的 PV、UV 统计数
@@ -459,7 +467,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/default.png
+  banner_img: /img/default.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -478,7 +486,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "An elegant Material-Design theme for Hexo"
+    text: " 我无有精神，昨夜不曾睡"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
@@ -531,13 +539,13 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/default.png
-  banner_img_height: 70
+  banner_img: /img/default_banner.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
-  default_index_img:
+  default_index_img: /img/default_index.jpg
 
   # 文章标题下方的元信息
   # Meta information below title
@@ -894,8 +902,8 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/default_banner2.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
 
 
@@ -905,8 +913,8 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/default_banner3.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
 
   # 分类的排序字段，前面带减号是倒序，不带减号是正序
@@ -934,7 +942,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/default_banner4.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -951,11 +959,11 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/default_banner5.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
   avatar: /img/avatar.png
-  name: "Fluid"
+  name: "chz"
   intro: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
@@ -973,8 +981,8 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/default.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
 
 
@@ -984,8 +992,8 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 85
+  banner_img: /img/default.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
   # Delay in redirecting to home page (milliseconds)
@@ -998,8 +1006,8 @@ page404:
 #---------------------------
 links:
   enable: false
-  banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img: /img/default.jpg
+  banner_img_height: 80
   banner_mask_alpha: 0.3
   # 友链的成员项
   # Member item of page
