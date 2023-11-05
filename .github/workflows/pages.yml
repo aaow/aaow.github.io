@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: ${{ env.GIT_USER }}/${{ env.DEPLOY_REPO }}
-          ref: main
+          ref: ${{ DEPLOY_BRANCH }}
           path: .deploy_git
 
       - name: Setup Node
@@ -41,9 +41,11 @@ jobs:
 
       - name: Setup SSH Key
         run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
           mkdir -p ~/.ssh
-          echo "${{ secrets.HEXO_DEPLOY_SECRET }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.HEXO_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
       - name: Deploy
         run: |
