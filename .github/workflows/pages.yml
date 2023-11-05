@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GIT_USER: chzaaow
+  GIT_EMAIL: chzaaow@gmail.com
+  THEME_REPO: fluid-dev/hexo-theme-fluid
+  THEME_BRANCH: master
+  DEPLOY_REPO: aaow/aaow.github.io
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    name: Deployment
+
+    steps:
+      - name: Check Out
+        uses: actions/checkout@v3
+
+      - name: Clone Repo
+        uses: actions/checkout@v3
+        with:
+          repository: ${DEPLOY_REPO}
+          path: .deploy_git
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Setup Git
+        run: |
+          git config --global user.name ${GIT_USER}
+          git config --global user.email ${GIT_EMAIL}
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HEXO_DEPLOY_SECRET }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: Deploy
+        run: |
+          npm install --location=global hexo-cli
+          npm install
+          hexo d

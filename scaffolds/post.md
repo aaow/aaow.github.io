@@ -1,6 +1,9 @@
 ---
 title: {{ title }}
 date: {{ date }}
-categories：
+banner_img:
+index_img:
+categories:
 tags:
+
 ---

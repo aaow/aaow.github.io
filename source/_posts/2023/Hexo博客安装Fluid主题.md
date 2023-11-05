@@ -1,8 +1,12 @@
 ---
-title: Hexo博客安装Fluid主题
-tags: hexo
-abbrlink: c3d63cfc
-date: 2023-09-18 02:08:35
+title: Hexo博客和Fluid主题
+categories: Hexo博客
+tags:
+- hexo
+abbrlink: 187bd52a
+date: 2023-09-18 00:08:35
+banner_img: https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060048328.jpg
+
 ---
 
 # Hexo博客记录
@@ -83,7 +87,7 @@ deploy:
 部署命令:
 
 ```bash
-$ hexo clean && hexo d
+$ hexo clean && hexo g && hexo d
 ```
 
 {% note success %}
@@ -96,3 +100,14 @@ $ yarn #默认install
 ```
 
 {% endnote %}
+
+
+
+## 本地部署
+
+```bash
+$ hexo s
+```
+
+
+
