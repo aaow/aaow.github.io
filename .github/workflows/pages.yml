@@ -25,8 +25,8 @@ jobs:
       - name: Clone Repo
         uses: actions/checkout@v3
         with:
-          repository: $GIT_USER/$DEPLOY_REPO
-          ref: $DEPLOY_BRANCH
+          repository: aaow/aaow.github.io
+          ref: main
           path: .deploy_git
 
       - name: Setup Node
@@ -36,8 +36,8 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config --global user.name $GIT_USER
-          git config --global user.email $GIT_EMAIL
+          git config --global user.name ${{env.GIT_USER}}
+          git config --global user.email ${{env.GIT_EMAIL}}
 
       - name: Setup SSH Key
         run: |
