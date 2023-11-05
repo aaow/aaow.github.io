@@ -25,7 +25,7 @@ jobs:
       - name: Clone Repo
         uses: actions/checkout@v3
         with:
-          repository: aaow/aaow.github.io
+          repository: ${{ env.GIT_USER }}/${{ env.DEPLOY_REPO }}
           ref: main
           path: .deploy_git
 
@@ -36,13 +36,13 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config --global user.name ${{env.GIT_USER}}
-          git config --global user.email ${{env.GIT_EMAIL}}
+          git config --global user.name ${{ env.GIT_USER }}
+          git config --global user.email ${{ env.GIT_EMAIL }}
 
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
-          echo "$secrets.HEXO_DEPLOY_SECRET" > ~/.ssh/id_ed25519
+          echo "${{ secrets.HEXO_DEPLOY_SECRET }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
 
       - name: Deploy
