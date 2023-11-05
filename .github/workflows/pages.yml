@@ -52,3 +52,4 @@ jobs:
           npm install --location=global hexo-cli
           npm install
           hexo d
+          
