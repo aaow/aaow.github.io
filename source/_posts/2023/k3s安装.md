@@ -15,7 +15,7 @@ tags:
 
 Kubernetes 是一个可移植、可扩展的开源平台，用于管理容器化的工作负载和服务，方便进行声明式配置和自动化。因为ks间长度为8，也叫k8s。
 
-{% endsuccess %}
+{% endnote %}
 
 ## k3s是轻量级的 Kubernetes
 
