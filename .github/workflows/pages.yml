@@ -11,7 +11,7 @@ env:
   THEME_REPO: fluid-dev/hexo-theme-fluid
   THEME_BRANCH: master
   DEPLOY_REPO: aaow.github.io
-  DEPLOY_BRANCH: main
+  DEPLOY_BRANCH: gh-pages
 
 jobs:
   deployment:
@@ -52,4 +52,3 @@ jobs:
           npm install --location=global hexo-cli
           npm install
           hexo d
-          
