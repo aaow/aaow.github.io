@@ -6,11 +6,11 @@ on:
       - main
 
 env:
-  GIT_USER: chzaaow
+  GIT_USER: aaow
   GIT_EMAIL: chzaaow@gmail.com
   THEME_REPO: fluid-dev/hexo-theme-fluid
   THEME_BRANCH: master
-  DEPLOY_REPO: aaow/aaow.github.io
+  DEPLOY_REPO: aaow.github.io
 
 jobs:
   deployment:
@@ -24,7 +24,7 @@ jobs:
       - name: Clone Repo
         uses: actions/checkout@v3
         with:
-          repository: ${DEPLOY_REPO}
+          repository: ${{ GIT_USER }}/${{ DEPLOY_REPO }}
           path: .deploy_git
 
       - name: Setup Node
@@ -34,8 +34,8 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config --global user.name ${GIT_USER}
-          git config --global user.email ${GIT_EMAIL}
+          git config --global user.name ${{ GIT_USER }}
+          git config --global user.email ${{ GIT_EMAIL }}
 
       - name: Setup SSH Key
         run: |
