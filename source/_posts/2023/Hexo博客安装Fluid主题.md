@@ -5,8 +5,8 @@ tags:
 - hexo
 abbrlink: 187bd52a
 date: 2023-09-18 00:08:35
-banner_img: 
-index_img: https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060048328.jpg
+banner_img: https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060048328.jpg
+
 ---
 
 # Hexo博客记录

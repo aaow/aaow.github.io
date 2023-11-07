@@ -2,8 +2,8 @@
 title: Fluid主题美化
 abbrlink: 86b04e37
 date: 2023-10-14 23:11:42
-banner_img: 
-index_img: https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060048328.jpg
+banner_img: https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060048328.jpg
+index_img: 
 categories: Hexo博客
 tags: 
 - hexo
