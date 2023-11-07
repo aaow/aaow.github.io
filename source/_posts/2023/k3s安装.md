@@ -1,12 +1,12 @@
 ---
 title: k3s安装
-date: 2023-10-27 19:06:04
-banner_img: https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060053084.jpg
-index_img:
+banner_img: 
 categories: 云原生
 tags:
-- k3s
-
+  - k3s
+abbrlink: 483bde15
+date: 2023-10-27 19:06:04
+index_img: 'https://raw.githubusercontent.com/aaow/blog_img/main/2023/202311060053084.jpg'
 ---
 
 # K3S安装
